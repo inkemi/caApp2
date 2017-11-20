@@ -9,6 +9,6 @@ namespace ContactWebApi.Services
     public interface IContactService
     {
         List<Contact> FindContacts();
-        ContactService FindContactById();
+        Contact FindContactById(int id);
     }
 }

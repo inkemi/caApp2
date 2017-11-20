@@ -21,14 +21,10 @@ namespace ContactWebApi.Services
             return _contactRepository.GetAll();
         }
 
-        public ContactService FindContactById()
-        {
-            throw new NotImplementedException();
-        }
-
         public Contact FindContactById(int id)
         {
             return _contactRepository.GetById(id);
         }
+
     }
 }

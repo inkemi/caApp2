@@ -8,8 +8,8 @@ using Microsoft.Azure.KeyVault.Models;
 
 namespace ContactWebApi.Controllers
 {
-    [Route("api/contacs")]
-    public class ContactsController: Controller
+    [Route("api/contacts")]
+    public class ContactsController : Controller
     {
         private readonly IContactService _contactService;
 
@@ -25,10 +25,11 @@ namespace ContactWebApi.Controllers
             return new JsonResult(contacts);
         }
 
-        [HttpGet("{id")]
-        public IActionResult GetById(int id)
+        [HttpGet("{id}")]
+
+    public IActionResult GetById(int id)
         {
-            var contact = _contactService.FindContactById();
+            var contact = _contactService.FindContactById(id);
             return new JsonResult(contact);
         }
     }
