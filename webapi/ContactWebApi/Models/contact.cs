@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ContactWebApi.Model
+namespace ContactWebApi.Models
 {
-    public class contact
+    public class Contact
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -14,7 +14,7 @@ namespace ContactWebApi.Model
         public string Street { get; set; }
         public string City { get; set; }
 
-        public ContactWebApi(int id, string firstName, string lastName, string phone, string street, string city)
+        public Contact(int id, string firstName, string lastName, string phone, string street, string city)
         {
             Id = id;
             FirstName = firstName;

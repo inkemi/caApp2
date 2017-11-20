@@ -11,24 +11,25 @@ namespace ContactWebApi.Controllers
     [Route("api/contacs")]
     public class ContactsController: Controller
     {
-        private readonly IContactService contactService;
+        private readonly IContactService _contactService;
 
         public ContactsController(IContactService contactService)
         {
-            this.contactService = contactService;
+            _contactService = contactService;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            var contacts = contactService;
-        //    var contacts = new List<Contact>
-        //    {
-        //        new Contact(1, "Mikko", "Inkeröinen", "0505332216", "Kiertokatu 2 E 22" "Lappeenranta"),
-        //        new Contact(2, "Jaska", "Jokunen", "040555566", "Jokukatu 2", "Jaskal")
-         //   };
+            var contacts = _contactService.FindContacts();
+            return new JsonResult(contacts);
+        }
 
-            return new JsonResult("assadfys");
+        [HttpGet("{id")]
+        public IActionResult GetById(int id)
+        {
+            var contact = _contactService.FindContactById();
+            return new JsonResult(contact);
         }
     }
 }

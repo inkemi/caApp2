@@ -1,4 +1,4 @@
-﻿using ContactWebApi.Model;
+﻿using ContactWebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +11,24 @@ namespace ContactWebApi.Services
     {
         private readonly IContactRepository _contactRepository;
 
+        public ContactService(IContactRepository contactRepository)
+        {
+            _contactRepository = contactRepository;
+        }
+
         public List<Contact> FindContacts()
         {
-            throw new NotImplementedException();
+            return _contactRepository.GetAll();
         }
 
         public ContactService FindContactById()
         {
             throw new NotImplementedException();
+        }
+
+        public Contact FindContactById(int id)
+        {
+            return _contactRepository.GetById(id);
         }
     }
 }

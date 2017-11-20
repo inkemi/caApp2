@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ContactWebApi.Models;
 
 namespace ContactWebApi.Services
 {
-    interface IContactService
+    public interface IContactService
     {
+        List<Contact> FindContacts();
+        ContactService FindContactById();
     }
 }
