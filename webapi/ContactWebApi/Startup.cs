@@ -25,6 +25,10 @@ namespace ContactWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(o => o.AddPolicy("ContactsAppPolicy", builder =>
+            {
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            }));
             services.AddScoped<IContactService, ContactService>();
             services.AddSingleton<IContactRepository, ContactRepository>();
             services.AddMvc();
@@ -37,7 +41,7 @@ namespace ContactWebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("ContactsAppPolicy");
             app.UseMvc();
         }
     }

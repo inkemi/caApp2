@@ -22,12 +22,17 @@ export class ContactsComponent implements OnInit {
 
   ngOnInit() {
     this.contactCount = this.contacts.length;
+
   }
   addContact() {
-    this.contact = this.firstName + ' ' + this.lastName + ' Phone: ' + this.phone + ' Address: ' + this.street + ' ' +this.city;
+    this.contact = this.firstName + ' ' + this.lastName + ' Phone: ' + this.phone + ' Address: ' + this.street + ' ' + this.city;
     this.contacts.push(this.contact);
     this.contact = '';
     this.contactCount = this.contacts.length;
+  }
+
+  findContact(){
+    console.log(this.contact);
   }
 
 }
