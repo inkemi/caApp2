@@ -11,6 +11,10 @@ namespace ContactWebApi.Repositories
         List<Contact> GetAll();
         Contact GetById(int id);
 
-        //TODO 
+        Contact Create(Contact contact);
+
+        Contact Update(Contact contact);
+
+        bool Delete(int id);
     }
 }

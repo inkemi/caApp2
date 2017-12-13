@@ -25,6 +25,19 @@ namespace ContactWebApi.Services
         {
             return _contactRepository.GetById(id);
         }
+        public Contact CreateContact(Contact contact)
+        {
+            return _contactRepository.Create(contact);
+        }
 
+        public Contact UpdateContact(Contact contact)
+        {
+            return _contactRepository.Update(contact);
+        }
+
+        public bool DeleteContact(int id)
+        {
+            return _contactRepository.Delete(id);
+        }
     }
 }

@@ -1,37 +1,6 @@
-
-<div class="container color-dark">
-  <div class="row">
-    <p>Add Contact</p>
-  </div>
-</div>
-<div class="container color-light">
-  <div class="col">
-    <form>
-      <input type="text" class="txt" name="firstName" placeholder="First Name" [(ngModel)]="firstName">
-      <input type="text" class="txt" name="lasstName" placeholder="Last Name" [(ngModel)]="lastName">
-      <input type="text" class="txt" name="phone" placeholder="Phone" [(ngModel)]="phone">
-      <input type="text" class="txt" name="street" placeholder="Street" [(ngModel)]="street">
-      <input type="text" class="txt" name="city" placeholder="City" [(ngModel)]="city">
-      <input type="submit" class="btn" [value]="btnText" (click)="addContact()">
-    </form>
-  </div>
-</div>
-
-<br><br>
+<app-map></app-map>
+<app-contact-item *ngFor="let contact of contacts" [contact]="contact" (contactEdit)="onContactEdit($event)"></app-contact-item>
 
 
-<div class="container color-dark">
-  <div class="row">
-    Contactlist ({{ contactCount }})
-  </div>
-</div>
-<div class="row">
-<div class="container color-light" *ngFor="let contact of contacts">
-
-
-    Contact: {{contact}}
-
-  </div>
-</div>
 
 

@@ -1,0 +1,102 @@
+.container {
+  display: grid;
+  grid-template-rows: 50% auto;
+}
+.row {
+  padding: .4em 1.3em;
+}
+.mat-card-header {
+  background: #add8e6;
+  border: 5px solid #2885C4;
+  border-radius: 10px;
+  width: 90%;
+}
+.example-header-image{
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.mat-card-title{
+  margin-top: 10px;
+  font-size: 125%;
+  font-weight: bold;
+}
+
+.mat-card {
+  background: #f0f8ff;
+  border: 5px solid #2885C4;
+  border-radius: 10px;
+  width: 550px;
+  margin: 2px;
+}
+.data{
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.map{
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.map:hover {
+  background-color: gray;
+  color: white;
+}
+
+input.txt {
+  border: 0;
+  padding: 1em;
+  width: 80%;
+  margin-bottom: 2em;
+}
+input.btn {
+  border: 0;
+  display: block;
+  padding: 1em 3em;
+  background: #A5F883;
+  color: #003A61;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+.clear{
+  background: lightgray;
+  padding: 0.25em 3em;
+  border: 2px solid #0066cc;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.clear:hover {
+  background-color: gray;
+  color: white;
+}
+.create{
+  background: #ccffcc;
+  padding: 0.25em 3em;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.create:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.delete{
+  background: #ffcc99;
+  padding: 0.25em 3em;
+  border: 2px solid #f44336;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.delete:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.contact-container {
+  background: #3FA0E1;
+  padding: .5em;
+  font-weight: bold;
+  cursor: pointer;
+}

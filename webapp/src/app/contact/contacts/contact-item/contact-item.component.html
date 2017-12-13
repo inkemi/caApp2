@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"><mat-icon>account_circle</mat-icon></div>
+    <mat-card-title>{{contact.firstName}} {{contact.lastName}}</mat-card-title>
+  </mat-card-header>
+<table>
+ <tr><td>
+  <mat-icon class="data">phone</mat-icon> </td><td>{{contact.phone}}
+</td></tr>
+  <tr><td>
+    <mat-icon  class="data">map</mat-icon></td><td class="map" (click)="contactMap()">{{contact.street}} {{contact.city}}
+  </td></tr>
+  <tr>
+    <td><button type="button" class="create" [value]="btnEdit" (click)="editContact()"><mat-icon >create</mat-icon></button></td>
+    <td><button type="button" class="delete" [value]="btnDelete" (click)="deleteContact()"><mat-icon>delete</mat-icon></button></td>
+  </tr>
+</table>
+</mat-card>
+
+<mat-card *ngIf= "edit">
+  <form class="example-form">
+    <tr><td>
+      <input type="text" class="txt" name="itemfirstName" placeholder="First Name" [(ngModel)]="updateContact.firstName">
+
+      <input type="text" class="txt" name="itemlastName" placeholder="Last Name" [(ngModel)]="updateContact.lastName">
+    </td></tr><tr><td>
+    <input type="text" class="txt" name="itemphone" placeholder="Phone" [(ngModel)]="updateContact.phone">
+  </td></tr><tr><td>
+    <input type="text" class="txt" name="itemstreet" placeholder="Street" [(ngModel)]="updateContact.street">
+
+    <input type="text" class="txt" name="itemcity" placeholder="City" [(ngModel)]="updateContact.city">
+  </td></tr>
+
+  </form>
+  <button type="button" class="create" [value]="btnEdit2" (click)="editContact2()"><mat-icon>done</mat-icon></button>
+  <button type="button" class="clear" [value]="btnEdit2" (click)="editContact3()"><mat-icon>clear</mat-icon></button>
+</mat-card>
+
+<mat-card *ngIf= "delete">
+  <p>Are you sure - Contact delete?</p>
+  <button type="button" class="create" [value]="btnEdit2" (click)="deleteContact2()"><mat-icon>done</mat-icon></button>
+  <button type="button" class="clear" [value]="btnEdit2" (click)="deleteContact3()"><mat-icon>clear</mat-icon></button>
+</mat-card>
+
+<mat-card *ngIf="map">
+  <app-map></app-map>
+  <div>
+    <iframe
+      width="266"
+      height="250"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBHXTNJiO225t4QNN0TmHB9FtHMPcOn2-4&zoom=13&q=skinnarilankatu36,lappeenranta" allowfullscreen>
+    </iframe>
+  </div>
+  <button type="button" class="clear" [value]="btnEdit2" (click)="contactMap2()"><mat-icon>clear</mat-icon></button>
+</mat-card>
+

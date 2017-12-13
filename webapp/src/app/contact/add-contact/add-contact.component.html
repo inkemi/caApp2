@@ -1,3 +1,26 @@
-<p>
-  add-contact works!
-</p>
+<div class="container color-dark">
+  <div class="row">
+    <p>Add Contact</p>
+  </div>
+</div>
+<div class="container color-light">
+  <div class="col">
+    <form>
+      <tr><td>
+        <input type="text" class="txt" name="firstName" placeholder="First Name" [(ngModel)]="contact.firstName">
+
+        <input type="text" class="txt" name="lasstName" placeholder="Last Name" [(ngModel)]="contact.lastName">
+      </td></tr><tr><td>
+      <input type="text" class="txt" name="phone" placeholder="Phone" [(ngModel)]="contact.phone">
+    </td></tr><tr><td>
+      <input type="text" class="txt" name="street" placeholder="Street" [(ngModel)]="contact.street">
+
+      <input type="text" class="txt" name="city" placeholder="City" [(ngModel)]="contact.city">
+    </td></tr><tr><td>
+      <input type="submit" class="btn" [value]="btnText" (click)="addContact()">
+    </td></tr>
+    </form>
+  </div>
+</div>
+
+

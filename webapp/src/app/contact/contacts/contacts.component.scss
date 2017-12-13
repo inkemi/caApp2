@@ -11,6 +11,10 @@
 .color-light {
   background: #57B3F1;
 }
+.mat-expansion-panel-header {
+  background: #F5F5F5;
+  margin: -16px 0px 0px 0px;
+}
 
 input.txt {
   border: 0;
@@ -32,4 +36,7 @@ input.btn {
   padding: .5em;
   font-weight: bold;
   cursor: pointer;
+}
+.co-contact {
+  margin: 0px 0px 26px 0px;
 }

@@ -8,31 +8,79 @@ namespace ContactWebApi.Repositories
 {
     public class ContactRepository : IContactRepository
     {
-        private List<Contact> _contacts;
+        private ContactContext _dbContext;
 
-        public ContactRepository()
+        public ContactRepository(ContactContext context)
         {
-            _contacts = new List<Contact>();
-            Initialize();
+            _dbContext = context;
         }
 
         public List<Contact> GetAll()
         {
-           return _contacts;
+            return _dbContext.Contacts.ToList();
         }
 
         public Contact GetById(int id)
         {
-            return _contacts.FirstOrDefault(c => c.Id == id);
+            return _dbContext.Contacts.Where(c => c.Id == id).FirstOrDefault();
         }
 
-        private void Initialize()
+        public Contact Create(Contact contact)
         {
-                _contacts = new List<Contact>
-                {
-                    new Contact(1, "Mikko", "Inkeröinen", "0505332216", "Kiertokatu 2 E 22", "Lappeenranta"),
-                    new Contact(2, "Jaska", "Jokunen", "040555566", "Jokukatu 2", "Jaskal")
-               };
+
+            /*
+            var newContact = new Contact
+            {
+                FirstName = contact.FirstName,
+                LastName = contact.LastName,
+                Phone = contact.Phone,
+                Street = contact.Street,
+                City = contact.City
+            };
+            */
+
+
+            _dbContext.Contacts.Add(contact);
+            _dbContext.SaveChanges();
+
+            return contact;
         }
+
+        public Contact Update(Contact contact)
+        {
+
+            var updatedContact = _dbContext.Contacts.Where(c => c.Id == contact.Id).FirstOrDefault();
+
+            if (updatedContact == null)
+            {
+                return null;
+            }
+
+            updatedContact.FirstName = contact.FirstName;
+            updatedContact.LastName = contact.LastName;
+            updatedContact.Phone = contact.Phone;
+            updatedContact.Street = contact.Street;
+            updatedContact.City = contact.City;
+
+            _dbContext.Contacts.Update(updatedContact);
+            _dbContext.SaveChanges();
+
+            return updatedContact;
+        }
+
+        public bool Delete(int id)
+        {
+            var deleteContact = _dbContext.Contacts.Where(c => c.Id == id).FirstOrDefault();
+
+            if (deleteContact != null)
+            {
+                _dbContext.Contacts.Remove(deleteContact);
+                _dbContext.SaveChanges();
+                return true;
+            }
+
+            return false;
+        }
+
     }
 }
