@@ -16,6 +16,7 @@ export class ContactItemComponent implements OnInit {
   edit: boolean;
   delete: boolean;
   map: boolean;
+  local = '';
 
   public editcontact: Editcontact;
   @Input() contact: Contact;
@@ -61,6 +62,7 @@ export class ContactItemComponent implements OnInit {
 
   contactMap() {
     this.map = true;
+    this.local = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBHXTNJiO225t4QNN0TmHB9FtHMPcOn2-4&zoom=13&q=this.street+,+ this.city'
     console.log('Map ', this.contact.id);
   }
   contactMap2() {

@@ -43,15 +43,15 @@
 </mat-card>
 
 <mat-card *ngIf="map">
-  <app-map></app-map>
+  <button type="button" class="clearMap" [value]="btnEdit2" (click)="contactMap2()"><mat-icon>clear</mat-icon></button>
   <div>
     <iframe
-      width="266"
+      width="100%"
       height="250"
       frameborder="0" style="border:0"
-      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBHXTNJiO225t4QNN0TmHB9FtHMPcOn2-4&zoom=13&q=skinnarilankatu36,lappeenranta" allowfullscreen>
+      src="this.local" allowfullscreen>
     </iframe>
   </div>
-  <button type="button" class="clear" [value]="btnEdit2" (click)="contactMap2()"><mat-icon>clear</mat-icon></button>
+
 </mat-card>
 
