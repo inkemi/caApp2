@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ContactWebApi.Config;
 using ContactWebApi.Models;
 
 namespace ContactWebApi.Repositories
 {
     public class ContactRepository : IContactRepository
     {
-        private ContactContext _dbContext;
+        private ContactsDbContext _dbContext;
 
-        public ContactRepository(ContactContext context)
+        public ContactRepository(ContactsDbContext context)
         {
             _dbContext = context;
         }

@@ -5,9 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using ContactWebApi.Services;
 using ContactWebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ContactWebApi.Controllers
 {
+    [Authorize]
     [Route("api/contacts")]
     public class ContactsController : Controller
     {

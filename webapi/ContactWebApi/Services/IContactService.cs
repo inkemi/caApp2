@@ -10,11 +10,8 @@ namespace ContactWebApi.Services
     {
         List<Contact> FindContacts();
         Contact FindContactById(int id);
-
         Contact CreateContact(Contact contact);
-
         Contact UpdateContact(Contact contact);
-
         bool DeleteContact(int id);
     }
 }
